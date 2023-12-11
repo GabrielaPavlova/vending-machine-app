@@ -1,28 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from '../Interfaces/product';
 import { ProductListMockApiService } from '../services/product-list-api/product-list-mock-api.service';
-import { Product } from '../interfaces/product';
+
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-   productList: Product[] = [];
+  @Input() products: Product[] = [];
+  @Output() productSelected = new EventEmitter<number>();
 
+  productList: Product[] = [];
 
-  constructor(private productListMock : ProductListMockApiService) { }
+  constructor(private productListMock: ProductListMockApiService) {}
 
   ngOnInit(): void {
-    this.loadProductsList()
-  }
-
-  loadProductsList() {
-    this.productListMock.getProducts().subscribe(productListMock => {
-      this.productList = productListMock;
-      console.log(this.productList); // get here the products list
-    })
-
+    
   }
 
 }
