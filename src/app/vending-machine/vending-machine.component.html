@@ -1,0 +1,15 @@
+<div class="vending-machine">
+  <app-coins (coinInserted)="insertCoin($event)"></app-coins>
+  <app-product-list [products]="products"></app-product-list>
+  <app-select-product
+    [products]="products"
+    (productSelected)="selectProduct($event)"
+  ></app-select-product>
+  <app-control-panel-vm
+    [totalInserted]="calculateTotalInsertedCoins()"
+    [selectedProduct]="selectedProduct"
+    [changeToReturn]="changeToReturn"
+    (buyClicked)="buyProduct()"
+    (resetClicked)="resetProcess()"
+  ></app-control-panel-vm>
+</div>

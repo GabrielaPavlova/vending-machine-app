@@ -1,12 +1,12 @@
 [
-    { "id": 1, "name": "Product A", "price": 1.5, "quantity": 10 },
-    { "id": 2, "name": "Product B", "price": 2.0, "quantity": 8 },
-    { "id": 3, "name": "Product C", "price": 1.5, "quantity": 10 },
-    { "id": 4, "name": "Product D", "price": 2.0, "quantity": 8 },
-    { "id": 5, "name": "Product C", "price": 1.5, "quantity": 10 },
-    { "id": 6, "name": "Product D", "price": 2.0, "quantity": 8 },
-    { "id": 7, "name": "Product C", "price": 1.5, "quantity": 10 },
-    { "id": 8, "name": "Product D", "price": 2.0, "quantity": 8 },
-    { "id": 9, "name": "Product C", "price": 1.5, "quantity": 10 },
-    { "id": 10, "name": "Product D", "price": 2.0, "quantity": 8 }
+    { "id": 1, "name": "Product A", "price": 1.5, "quantity": 3, "outOfStock": false },
+    { "id": 2, "name": "Product B", "price": 2.0, "quantity": 15, "outOfStock": false },
+    { "id": 3, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
+    { "id": 4, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false },
+    { "id": 5, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
+    { "id": 6, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false },
+    { "id": 7, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
+    { "id": 8, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false },
+    { "id": 9, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
+    { "id": 10, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false }
 ]

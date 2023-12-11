@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ACCEPTED_COIN_DENOMINATIONS } from '../Constants/contants-coins';
 
 @Component({
   selector: 'app-coins',
   templateUrl: './coins.component.html',
-  styleUrls: ['./coins.component.css']
+  styleUrls: ['./coins.component.css'],
 })
 export class CoinsComponent implements OnInit {
+  @Output() coinInserted = new EventEmitter<number>();
 
-  constructor() { }
+  acceptedCoins = ACCEPTED_COIN_DENOMINATIONS;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  insertCoin(coin: number): void {
+    if (this.acceptedCoins.includes(coin)) {
+      this.coinInserted.emit(coin);
+    } else {
+      console.log('Invalid coin');
+    }
   }
-
 }

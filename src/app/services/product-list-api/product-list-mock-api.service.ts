@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // import * as productsListDataJSON from '../../../assets/mock-data/product-list.json';
-import { Product } from 'src/app/interfaces/product';
+import { Product } from 'src/app/Interfaces/product';
 
 @Injectable({
   providedIn: 'root',

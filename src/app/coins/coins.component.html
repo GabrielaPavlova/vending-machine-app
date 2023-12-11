@@ -1,1 +1,4 @@
-<p>coins works!</p>
+<div class="coin-slot">
+    <p>Insert Coins:</p>
+    <button *ngFor="let coin of acceptedCoins" (click)="insertCoin(coin)">{{ coin }}</button>
+  </div>
