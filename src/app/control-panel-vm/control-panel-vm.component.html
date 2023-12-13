@@ -1,9 +1,11 @@
 <div class="control-panel">
-    <p>Total Inserted: ${{ totalInserted }}</p>
-    <p *ngIf="selectedProduct !== null">Selected Product: {{ selectedProduct.name }}</p>
-    <p>Change: ${{ changeToReturn }}</p>
-    <div class="buttons">
-      <button (click)="buyProduct()">Buy</button>
-      <button (click)="resetProcess()">Reset</button>
-    </div>
+  <p>Total Inserted: ${{ totalInserted }}</p>
+  <p *ngIf="selectedProduct !== null">
+    Selected Product: {{ selectedProduct.name }}
+  </p>
+  <p>Change: ${{ changeToReturn }}</p>
+  <div class="buttons">
+    <button (click)="buyProduct()">Buy</button>
+    <button (click)="resetProcess()">Reset</button>
   </div>
+</div>

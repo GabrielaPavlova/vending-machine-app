@@ -1,6 +1,9 @@
 <ul class="product-list">
-    <li class="product" *ngFor="let product of products">
-      <span class="bold">{{product.name}}:</span>
-      <span>{{product.quantity}} -  {{product.price | currency:'EUR':true }}</span>
-    </li>
+  <li class="product" *ngFor="let product of products">
+    <span class="bold">{{ product.name }}:</span>
+    <span
+      >{{ product.quantity }} -
+      {{ product.price | currency : "EUR" : true }}</span
+    >
+  </li>
 </ul>
