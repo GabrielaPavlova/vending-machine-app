@@ -13,15 +13,15 @@ export class ControlPanelVmComponent implements OnInit {
   @Output() buyClicked = new EventEmitter<void>();
   @Output() resetClicked = new EventEmitter<void>();
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   buyProduct(): void {
     this.buyClicked.emit();
   }
 
-  resetProcess(): void {
+  resetProcessAll(): void {
     this.resetClicked.emit();
   }
 }

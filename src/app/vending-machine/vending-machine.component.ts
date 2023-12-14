@@ -41,13 +41,8 @@ export class VendingMachineComponent implements OnInit {
   }
 
   buyProduct(): void {
-    console.log('vliza li tuka');
     if (this.selectedProduct && this.insertedCoins.length) {
-      console.log('vliza li tuka1');
-
       this.products$.subscribe((products) => {
-        // BAD PRACTISE
-
         this.products = products;
       });
 
@@ -55,47 +50,47 @@ export class VendingMachineComponent implements OnInit {
         (p) => p.id === this.selectedProduct['id']
       );
 
-      console.log(this.products);
       if (product && this.calculateTotalInsertedCoins() >= product.price) {
-        console.log('vliza li tuka2');
-        this.changeToReturn = (
-          this.calculateTotalInsertedCoins() - product.price
-        ).toFixed(2);
-        // this.changeToReturn = Number(change);
-        alert(this.changeToReturn);
-
-        this.updateProductQuantity(this.selectedProduct, product);
+        const isTheProductAvailable = this.updateProductQuantity(product);
+        if (isTheProductAvailable) {
+          this.changeToReturn = (
+            this.calculateTotalInsertedCoins() - product.price
+          ).toFixed(2);
+          alert(this.changeToReturn);
+        }
       } else {
         alert('You do not have enought money to buy this product');
+        return;
       }
     }
-
-    this.resetProcess();
+    this.insertedCoins = [];
+    this.selectedProduct = null;
   }
 
   calculateTotalInsertedCoins(): number {
     return this.insertedCoins.reduce((total, coin) => total + coin, 0);
   }
 
-  updateProductQuantity(selectedProductUpdate, product) {
-    if (product['quantity'] !== 0) {
-      const productIndex = this.products.findIndex((p) => p.id === product.id);
+  updateProductQuantity(productToUpdate) {
+    const productIndex = this.products.indexOf(productToUpdate);
 
-      if (productIndex !== -1 && this.products[productIndex].quantity > 0) {
-        // Update inventory
-        this.products[productIndex].quantity--;
-        alert('Update successful');
-        return true; // Purchase successful
-      }
-      return false; // Purchase failed
+    if (productIndex !== -1 && this.products[productIndex].quantity !== 0) {
+      this.products[productIndex] = {
+        ...this.products[productIndex],
+        quantity: this.products[productIndex].quantity - 1,
+      };
+      alert('Update successfu the quantity of the product');
+      return true;
     } else {
       alert('Out of stock, cannot buy it');
+      return false;
     }
   }
 
-  resetProcess(): void {
+  resetProcessAll(): void {
     this.insertedCoins = [];
     this.selectedProduct = null;
+    this.changeToReturn = '0';
   }
 
   addProduct(): void {
@@ -103,26 +98,21 @@ export class VendingMachineComponent implements OnInit {
   }
 
   saveProduct(): void {
-    // Validate the new product (add additional validation logic as needed)
     if (this.newProduct.name && this.newProduct.price) {
-      // Dispatch action to add the new product
       const newProductId = this.getNextId();
-      console.log(this.products);
-
-      // Create a new product with the specified ID and quantity and outOfStock
       const newProductCreate: Product = {
         id: newProductId,
         name: this.newProduct.name,
         price: this.newProduct.price,
         outOfStock: false,
-        quantity: 15, // Set the quantity to 15
+        quantity: 15,
+        src: '../../../../assets/pics/default.svg', // Set the quantity to 15
       };
 
       this.store.dispatch(
         ProductActions.addProduct({ product: newProductCreate })
       );
 
-      // Reset the form
       this.newProduct = {};
       this.showAddProductForm = false;
     }
@@ -134,43 +124,30 @@ export class VendingMachineComponent implements OnInit {
   }
 
   editProduct(product: Product): void {
-    console.log(product);
     this.editedProduct = { ...product };
     this.showEditProductForm = true;
   }
 
   updateProduct(): void {
-    // Validate the edited product (add additional validation logic as needed)
     if (this.editedProduct.name && this.editedProduct.price) {
-      console.log('yes get the edited product');
-      console.log(this.editedProduct.name);
-      console.log(this.editedProduct.price);
       this.store.dispatch(
         ProductActions.updateProduct({ product: this.editedProduct })
       );
-
-      // Reset the form
       this.editedProduct = null;
       this.showEditProductForm = false;
     }
   }
 
   deleteProduct(productId: number): void {
-    console.log(productId);
-    // Dispatch action to delete the product
     this.store.dispatch(ProductActions.deleteProduct({ productId }));
   }
 
   private getNextId(): number {
     let maxId = 0;
-
-    // Get the existing products
     this.products$.subscribe((products) => {
-      // Find the maximum id among the existing products
       maxId = Math.max(...products.map((product) => product.id), 0);
     });
 
-    // Return the next id
     return maxId + 1;
   }
 }

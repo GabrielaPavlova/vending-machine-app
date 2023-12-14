@@ -10,7 +10,7 @@ import { Product } from 'src/app/Interfaces/product';
 })
 export class ProductListMockApiService {
   private productsList = '../../../assets/mock-data/product-list.json';
-  
+
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {

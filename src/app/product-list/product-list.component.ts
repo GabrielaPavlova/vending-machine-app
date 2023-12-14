@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../Interfaces/product';
 import { ProductListMockApiService } from '../services/product-list-api/product-list-mock-api.service';
 
-
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -16,7 +15,5 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productListMock: ProductListMockApiService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 }
