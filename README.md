@@ -30,7 +30,7 @@ Ensure you have the following installed:
 
    ```bash
    git clone <repository-url>
-   cd vending-machine-project
+   cd vending-machine-app
    npm install
 
 ## Run the application
@@ -39,8 +39,9 @@ ng serve
 
 ## Currency and Coin Denominations
 
-Currency: Chosen currency (EUR)
-Accepted Coin Denominations: [0.25, 0.5, 1, 2];
+- Currency: Chosen currency (EUR)
+
+- Accepted Coin Denominations: [0.25, 0.5, 1, 2];
 
 ## Future features and fixes 
 
