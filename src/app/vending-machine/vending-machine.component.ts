@@ -118,6 +118,10 @@ export class VendingMachineComponent implements OnInit {
     }
   }
 
+  cancelEditProduct(): void {
+    this.showEditProductForm = false;
+  }
+
   cancelAddProduct(): void {
     this.newProduct = {};
     this.showAddProductForm = false;
