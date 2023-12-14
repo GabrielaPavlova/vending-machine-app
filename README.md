@@ -13,7 +13,6 @@ This project implements a vending machine with the following features:
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Run the Application](#run-the-application)
-- [Project Structure](#project-structure)
 - [Currency and Coin Denominations](#currency-and-coin-denominations)
 
 ## Prerequisites
@@ -37,25 +36,6 @@ Ensure you have the following installed:
 ## Run the application
 
 ng serve
-
-## Project Structure
-
-src/
-|-- app/
-|   |-- Interfaces
-|   |-- Constants
-|   |-- Store
-|   |-- components/
-|       |-- vending-machine/
-|           |-- vending-machine.component.html
-|           |-- vending-machine.component.scss
-|           |-- vending-machine.component.ts
-|   |-- services/
-|       |-- vending-machine.service.ts
-|-- assets/
-|   |-- mock-data
-|   |-- images/
-|-- ...
 
 ## Currency and Coin Denominations
 
