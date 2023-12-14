@@ -1,0 +1,7 @@
+.product-price {
+  font-variant-numeric: tabular-nums;
+}
+
+li {
+  list-style: none;
+}

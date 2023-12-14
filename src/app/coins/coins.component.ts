@@ -19,7 +19,7 @@ export class CoinsComponent implements OnInit {
     if (this.acceptedCoins.includes(coin)) {
       this.coinInserted.emit(coin);
     } else {
-      console.log('Invalid coin');
+      alert('Invalid coin');
     }
   }
 }

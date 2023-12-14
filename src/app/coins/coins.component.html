@@ -1,6 +1,8 @@
 <div class="coin-slot">
-  <p>Insert Coins:</p>
-  <button *ngFor="let coin of acceptedCoins" (click)="insertCoin(coin)">
-    {{ coin }}
-  </button>
+    <h3> STEP 1 </h3>
+    <h4> Please insert your coins</h4>
+    <button class="btn btn-success mx-2" *ngFor="let coin of acceptedCoins"
+        (click)="insertCoin(coin)">
+        {{ coin | currency : "EUR" : true }}
+    </button>
 </div>

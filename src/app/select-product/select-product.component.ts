@@ -12,12 +12,9 @@ export class SelectProductComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    //console.log(this.products);
-  }
+  ngOnInit(): void {}
 
   selectProduct(product: Product[]): void {
-    console.log(product);
     this.productSelected.emit(product);
   }
 }

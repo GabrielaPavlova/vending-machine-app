@@ -1,12 +1,66 @@
 [
-    { "id": 1, "name": "Product A", "price": 1.5, "quantity": 3, "outOfStock": false },
-    { "id": 2, "name": "Product B", "price": 2.0, "quantity": 15, "outOfStock": false },
-    { "id": 3, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
-    { "id": 4, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false },
-    { "id": 5, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
-    { "id": 6, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false },
-    { "id": 7, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
-    { "id": 8, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false },
-    { "id": 9, "name": "Product C", "price": 1.5, "quantity": 15, "outOfStock": false },
-    { "id": 10, "name": "Product D", "price": 2.0, "quantity": 15, "outOfStock": false }
+    {
+        "id": 1,
+        "name": "Chips",
+        "price": 2.5,
+        "quantity": 3,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/chips.svg"
+    },
+    {
+        "id": 2,
+        "name": "Choco",
+        "price": 2,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/choco.svg"
+    },
+    {
+        "id": 3,
+        "name": "Ice-cream",
+        "price": 1,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/icecream.svg"
+    },
+    {
+        "id": 4,
+        "name": "Mix mineral fruits",
+        "price": 2.3,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/mix.svg"
+    },
+    {
+        "id": 5,
+        "name": "Milk",
+        "price": 1.5,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/milk.svg"
+    },
+    {
+        "id": 6,
+        "name": "Coffee",
+        "price": 0.9,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/coffee.svg"
+    },
+    {
+        "id": 7,
+        "name": "Mineral Water",
+        "price": 0.5,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/water.svg"
+    },
+    {
+        "id": 8,
+        "name": "Orange juice",
+        "price": 2.1,
+        "quantity": 15,
+        "outOfStock": false,
+        "src": "../../../../assets/pics/orange.svg"
+    }
 ]

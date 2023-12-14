@@ -1,4 +1,9 @@
-<div class="coin-slot">
-    <p>Please select Number of Product:</p>
-    <button *ngFor="let product of products" (click)="selectProduct(product)" [disabled]="product.outOfStock">{{ product.id }}</button>
+<div class="number-of-product">
+    <h3>STEP 2</h3>
+    <h4>Please select Number of Product:</h4>
+    <button class="btn btn-primary" *ngFor="let product of products"
+        (click)="selectProduct(product)" 
+        [disabled]="product.outOfStock">
+        {{product.id }}
+    </button>
 </div>
