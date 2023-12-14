@@ -14,8 +14,6 @@ This project implements a vending machine with the following features:
 - [Installation](#installation)
 - [Run the Application](#run-the-application)
 - [Project Structure](#project-structure)
-- [API Mocking](#api-mocking)
-- [Technologies](#technologies)
 - [Currency and Coin Denominations](#currency-and-coin-denominations)
 
 ## Prerequisites
